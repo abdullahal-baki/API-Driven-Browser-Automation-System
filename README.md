@@ -47,21 +47,58 @@ Client → FastAPI Controllers → Session Manager → Automation Engine → Sel
 - Structured Logging
 
 ## 📂 Project Structure
-project/
-├── api/
-│   ├── routes/
-│   ├── models/
-│   └── controllers/
-├── automation/
-│   ├── engine.py
-│   ├── steps/
-│   └── session.py
-├── utils/
-│   ├── logger.py
-│   ├── exceptions.py
-│   └── validators.py
-├── main.py
-└── README.md
+```bash
+fastapi_selenium_automation/
+|-- app/
+|    |-- __init__.py
+|    |-- main.py
+|    |-- core/
+|    |   |-- __init__.py
+|    |   |-- manager.py
+|    |   |-- selenium_worker.py
+|    |   `-- services/
+|    |       |-- __init__.py
+|    |       |-- automation_components.py
+|    |       |-- automation_flow_step1.py
+|    |       |-- automation_flow_step2.py
+|    |       |-- automation_flow_step3_beneficiary.py
+|    |       |-- automation_flow_step3_coverage_info.py
+|    |       |-- automation_flow_step3_owner_payor.py
+|    |       |-- automation_flow_step3_payment.py
+|    |       |-- automation_flow_step3_personal_info.py
+|    |       |-- automation_flow_step4.py
+|    |       `-- automation_flow_step5.py
+|    |-- routes/
+|    |   |-- __init__.py
+|    |   `-- automation_routes.py
+|    |-- schemas/
+|    |   |-- __init__.py
+|    |   |-- request.py
+|    |   |-- response.py
+|    |   `-- requests/
+|    |       |-- __init__.py
+|    |       |-- step1_schemas.py
+|    |       |-- step2_schemas.py
+|    |       |-- step3_schemas.py
+|    |       |-- step4_schemas.py
+|    |       `-- step5_schemas.py
+|    `-- utils/
+|        |-- __init__.py
+|        |-- check_element.py
+|        `-- logger.py
+|-- README.md
+|-- requirements.txt
+|-- docker-compose.yml
+|-- Dockerfile
+|-- .gitignore
+
+```
+
+# 🖼️ Screenshots
+
+![Dashboard](./images/1.png)
+![Dashboard](./images/2.png)
+
 
 ## 🚦 Example API Flow
 1. Create Session  
